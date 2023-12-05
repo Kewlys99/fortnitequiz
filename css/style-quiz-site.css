@@ -1,0 +1,163 @@
+@import url(style-index.css);
+
+:root{
+    --load-time: 3s;
+}
+
+body{
+    background: linear-gradient(135deg, #168FD8 0%, #69E2FF 100%);
+}
+header{
+    height: 8vh;
+}
+h1{
+    font-size: 5vh;
+}
+#quiz-question{
+    background-color: #212841;
+    padding: 50px;
+    color: white;
+    display: flex;
+    font-size: 130%;
+}
+#quiz-question img{
+    height: 40vh;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+#quiz-answers{
+    background: linear-gradient(180deg, #225597 0%, #030923 100%);
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*[id^="answer"]{
+    height: 100px;
+    width: 300px;
+    font-size: 200%;
+    color: black;
+    background: linear-gradient(180deg, #ECDE00 0%, #F9F05D 100%);
+    border: 2px white solid;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*[id^="answer"]:hover{
+    cursor: pointer;
+}
+*[id^="answer"]::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 50%;
+    width: 100%;
+    left: -150%;
+    top: 0;
+    transform: rotate(135deg);
+}
+*[id^="answer"]:hover:before{
+    animation: slide .8s;
+}
+.next-load-h1{
+    animation: nextloadh1 var(--load-time);
+}
+.next-load{
+    animation: nextload var(--load-time);
+}
+.next-load-bscroll{
+    animation: nextloadbscroll var(--load-time);
+}
+@keyframes nextloadh1{
+    0%{
+        font-size: 5vh;
+    }
+    30%{
+        font-size: 8vh;
+    }
+    50%{
+        font-size: 8vh;
+    }
+    70%{
+        font-size: 8vh;
+    }
+    100%{
+        font-size: 5vh;
+    }
+}
+@keyframes nextload{
+    0%{
+        height: 8vh;
+    }
+    30%{
+        height: 100vh;
+    }
+    50%{
+        height: 100vh;
+    }
+    70%{
+        height: 100vh;
+    }
+    100%{
+        height: 8vh;
+    }
+}
+@keyframes nextloadbscroll{
+    0%{
+        overflow: scroll;
+    }
+    1%{
+        overflow: hidden;
+    }
+    99%{
+        overflow: hidden;
+    }
+    100%{
+        overflow: scroll;
+    }
+}
+.start-load-h1-q{
+    animation: startloadh1q 2s;
+}
+.start-load-q{
+    animation: startloadq 2s;
+}
+.start-load-bscroll-q{
+    animation: startloadbscrollq 2s;
+}
+@keyframes startloadh1q{
+    0%{
+        font-size: 8vh;
+    }
+    30%{
+        font-size: 8vh;
+    }
+    100%{
+        font-size: 5vh;
+    }
+}
+@keyframes startloadq{
+    0%{
+        height: 100vh;
+    }
+    30%{
+        height: 100vh;
+    }
+    100%{
+        height: 8vh;
+    }
+}
+@keyframes startloadbscrollq{
+    0%{
+        overflow: hidden;
+    }
+    99%{
+        overflow: hidden;
+    }
+    100%{
+        overflow: scroll;
+    }
+}
