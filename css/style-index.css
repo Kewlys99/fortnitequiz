@@ -1,0 +1,158 @@
+/* Czcionka */
+@font-face { font-family: Burbank; font-weight: bold; src: url('Burbank-Big-Condensed-Bold-Font.otf');}
+
+/* Kod */
+*{
+    font-family: Burbank;
+    margin: auto;
+}
+header{
+    background: linear-gradient(135deg, #168FD8 0%, #69E2FF 100%);
+    color: white;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title{
+    color: white;
+    text-decoration: none;
+}
+#quiz-description{
+    background-color: #212841;
+    height: 50vh;
+    padding-left: 50px;
+    color: white;
+    display: flex;
+}
+#quiz-description img{
+    height: 90%;
+    margin-bottom: 0;
+
+}
+#start-panel{
+    background: linear-gradient(180deg, #225597 0%, #030923 100%);
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#start{
+    height: 100px;
+    width: 300px;
+    font-size: 200%;
+    color: black;
+    background: linear-gradient(180deg, #ECDE00 0%, #F9F05D 100%);
+    border: 2px white solid;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#start:hover{
+    cursor: pointer;
+}
+#start::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 50%;
+    width: 100%;
+    left: -150%;
+    top: 0;
+    transform: rotate(135deg);
+}
+#start:hover:before{
+    animation: slide .8s;
+}
+@keyframes slide {
+    0%{
+        left: -150%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+footer{
+    font-size: 3vh;
+    background-color: #161C34;
+    height: 5vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+h1{
+    font-size: 8vh;
+    text-align: center;
+}
+h2{
+    font-size: 300%;
+    padding-bottom: 25px;
+}
+h3{
+    padding-top: 10px;
+    font-size: 200%;
+    letter-spacing: 1px;
+}
+#victory{
+    color: #ECDE00;
+}
+.start-load{
+    animation: startload 2s;
+}
+.start-load-bscroll{
+    animation: startloadbscroll 2s;
+}
+@keyframes startload{
+    0%{
+        height: 100vh;
+    }
+    30%{
+        height: 100vh;
+    }
+    100%{
+        height: 20vh;
+    }
+}
+@keyframes startloadbscroll{
+    0%{
+        overflow: hidden;
+    }
+    99%{
+        overflow: hidden;
+    }
+    100%{
+        overflow: scroll;
+    }
+}
+.end-load{
+    animation: endload 2s;
+}
+.end-load-bscroll{
+    animation: endloadbscroll 2s;
+}
+@keyframes endload{
+    0%{
+        height: 20vh;
+    }
+    70%{
+        height: 100vh;
+    }
+    100%{
+        height: 100vh;
+    }
+}
+@keyframes endloadbscroll{
+    0%{
+        overflow: scroll;
+    }
+    1%{
+        overflow: hidden;
+    }
+    100%{
+        overflow: hidden;
+    }
+}
