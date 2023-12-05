@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite LAKru Quiz</title>
+    <link rel="stylesheet" href="css/style-index.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body class="start-load-bscroll">
+    <header class="start-load">
+        <a href="index.html" id="title">
+            <h1>Fortnite LAKru Quiz</h1>
+        </a>
+    </header>
+    <main>
+        <section id="quiz-description">
+            <article>
+                <h2>Sprawdź się w boju</h2>
+                <h3>Przekonaj się czy jesteś prawdziwym graczem Fortnite. <br>Seria 10 pytań z różnego rodzaju kategorii sprawdzi czy wytrwasz na mapie i zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.</h3>
+            </article>
+            <img src="images/jones.png" alt="Jones Pierwszy">
+        </section>
+        <section id="start-panel">
+            <button id="start" onclick="quiztab()" type="button">Zacznij quiz</button>
+        </section>
+    </main>
+    <footer>
+        LAKru Production
+    </footer>
+    
+    <script>
+        setTimeout( () => {
+            document.querySelector('body').classList.remove('start-load-bscroll')
+            document.querySelector('header').classList.remove('start-load')
+            }, 2000)
+        function quiztab(){
+            window.scrollTo(0, 0);
+            document.querySelector('body').classList.add('end-load-bscroll')
+            document.querySelector('header').classList.add('end-load')
+            setTimeout( () => {
+                location.href = "quiz-site.php";
+            }, 2000)
+        }
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        </script>
+</body>
+</html>

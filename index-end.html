@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite LAKru Quiz</title>
+    <link rel="stylesheet" href="css/style-index.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body class="start-load-bscroll">
+    <header class="start-load">
+        <a href="index.html" id="title">
+            <h1>Fortnite LAKru Quiz</h1>
+        </a>
+    </header>
+    <main>
+        <section id="quiz-description">
+            <article>
+                <h2></h2>
+                <h3></h3>
+            </article>
+            <img src="images/jones.png" alt="Jones Pierwszy">
+        </section>
+        <section id="start-panel">
+            <button id="start" onclick="quiztab()" type="button">Zacznij quiz ponownie</button>
+        </section>
+    </main>
+    <footer>
+        LAKru Production
+    </footer>
+    <script>
+        var description;
+        var correct_answers = localStorage.getItem('correctanswer');
+        document.querySelector('h2').innerHTML = 'Zdobyłeś ' + correct_answers + ' na 10 punktów.';
+        switch(Number(correct_answers)){
+            case 1:
+                description = 'Ale z ciebie BAMBIK! Próbuj dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 2:
+                description = 'Ale z ciebie BAMBIK! Próbuj dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 3:
+                description = 'Ale z ciebie BAMBIK! Próbuj dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 4:
+                description = 'Ale z ciebie BAMBIK! Próbuj dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 5:
+                description = 'Coś nie coś potrafisz, ale warto próbować dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 6:
+                description = 'Coś nie coś potrafisz, ale warto próbować dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 7:
+                description = 'Coś nie coś potrafisz, ale warto próbować dalej aż zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 8:
+                description = 'Wszystko jest w twoim zasięgu! Lekkie szlify i zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 9:
+                description = 'Wszystko jest w twoim zasięgu! Lekkie szlify i zdobędziesz <span id="victory">Królewskie Zwycięstwo</span>.';
+            break;
+            case 10:
+                description = 'Brawo! Jesteś prawdziwym Fortnite-owym świrem! Zasłużone <span id="victory">Królewskie Zwycięstwo</span>!';
+                break;
+            }
+            document.querySelector('h3').innerHTML = description;
+        setTimeout( () => {
+            document.querySelector('body').classList.remove('start-load-bscroll')
+            document.querySelector('header').classList.remove('start-load')
+            }, 2000)
+        function quiztab(){
+            window.scrollTo(0, 0);
+            document.querySelector('body').classList.add('end-load-bscroll')
+            document.querySelector('header').classList.add('end-load')
+            setTimeout( () => {
+                location.href = "quiz-site.php";
+            }, 2000)
+        }
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
